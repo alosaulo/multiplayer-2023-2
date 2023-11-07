@@ -39,6 +39,10 @@ public class MageController : MonoBehaviour
     private void FixedUpdate()
     {
         rigidbody.MovePosition(rigidbody.position + movement * Time.fixedDeltaTime);
+        if (movement != Vector3.zero)
+        {
+            rigidbody.rotation = Quaternion.LookRotation(movement);
+        }
     }
 
     private void Move()
@@ -47,6 +51,8 @@ public class MageController : MonoBehaviour
         float hAxis = Input.GetAxis("Horizontal");
 
         movement = new Vector3(hAxis, 0, vAxis).normalized * speed;
+
+
 
         animator.SetFloat("speed", movement.magnitude);
 

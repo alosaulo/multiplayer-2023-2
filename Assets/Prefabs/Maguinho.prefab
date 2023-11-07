@@ -780,6 +780,8 @@ GameObject:
   - component: {fileID: 3272642010908768127}
   - component: {fileID: 3647262755816003756}
   - component: {fileID: 8748783419595569975}
+  - component: {fileID: 8127757089143596101}
+  - component: {fileID: 262204226272385175}
   m_Layer: 0
   m_Name: Maguinho
   m_TagString: Untagged
@@ -800,6 +802,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8682461942985516122}
   - {fileID: 5193336704459465089}
   - {fileID: 763739295257196114}
   m_Father: {fileID: 0}
@@ -848,6 +851,53 @@ CapsuleCollider:
   m_Height: 1.882848
   m_Direction: 1
   m_Center: {x: 0, y: 0.98, z: 0}
+--- !u!114 &8127757089143596101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3804398430391794153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3113a27dcb6006243aa863379c4fd25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  status:
+    HealthPoints: 0
+    MagicPoints: 0
+  Staffs:
+  - {fileID: 7534630621431601282}
+  - {fileID: 4768005764401216208}
+  - {fileID: 8739471879955428092}
+--- !u!54 &262204226272385175
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3804398430391794153}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &3884264877857853138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,6 +1360,7 @@ GameObject:
   - component: {fileID: 6097796830775466342}
   - component: {fileID: 155498120611604518}
   - component: {fileID: 3112569528268290455}
+  - component: {fileID: 8739471879955428092}
   m_Layer: 0
   m_Name: Staff03PolyArt
   m_TagString: Untagged
@@ -1382,6 +1433,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8739471879955428092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5261929719216751599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6b6bbc3fc9de44eb37272e6a50e0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicPrefab: {fileID: 4537880100619368016, guid: 63398c55ce2c2f94d87106d19928e689, type: 3}
+  OriginAtk: {fileID: 8682461942985516122}
+  type: 4
+  damage: 0
 --- !u!1 &5383073765784355540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,13 +1492,14 @@ GameObject:
   - component: {fileID: 6143684635333607749}
   - component: {fileID: 5899422958924455078}
   - component: {fileID: 8466007577031976202}
+  - component: {fileID: 7534630621431601282}
   m_Layer: 0
   m_Name: Staff01PolyArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6143684635333607749
 Transform:
   m_ObjectHideFlags: 0
@@ -1497,6 +1565,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7534630621431601282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5459183710447923986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6b6bbc3fc9de44eb37272e6a50e0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicPrefab: {fileID: 2237422955728602277, guid: 5407e5693f882e04798f8a044d319e65, type: 3}
+  OriginAtk: {fileID: 8682461942985516122}
+  type: 0
+  damage: 0
 --- !u!1 &5534245028677165500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,6 +2185,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 502192556813220054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7581180705863430592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8682461942985516122}
+  m_Layer: 0
+  m_Name: AtkOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8682461942985516122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7581180705863430592}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.02, y: 1.15, z: 2}
+  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3272642010908768127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7722352560084037732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2359,6 +2474,7 @@ GameObject:
   - component: {fileID: 1727171078029716209}
   - component: {fileID: 1027783614890744534}
   - component: {fileID: 4687960769391647753}
+  - component: {fileID: 4768005764401216208}
   m_Layer: 0
   m_Name: Staff02Polyart
   m_TagString: Untagged
@@ -2431,6 +2547,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4768005764401216208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076726181844624867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6b6bbc3fc9de44eb37272e6a50e0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicPrefab: {fileID: 5364161752493112206, guid: ed25597422af34a448dbbd30ee9278b0, type: 3}
+  OriginAtk: {fileID: 8682461942985516122}
+  type: 1
+  damage: 0
 --- !u!1 &8563527461755768564
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class StaffBeahviour : MonoBehaviour
 
     public void DoAtack() 
     {
-        Instantiate(magicPrefab, OriginAtk.transform.position, Quaternion.identity);
+        Instantiate(magicPrefab, OriginAtk.transform.position, OriginAtk.rotation);
         Debug.Log($"damage:{damage}|type:{type}");
     }
 
