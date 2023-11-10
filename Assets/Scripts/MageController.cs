@@ -2,38 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MageController : MonoBehaviour
+public class MageController : Character
 {
-
-    public float speed;
-
-    [SerializeField]
-    Status status;
 
     public StaffBeahviour[] Staffs;
 
     StaffBeahviour equipedStaff;
-
-    Animator animator;
-
-    Rigidbody rigidbody;
 
     private Vector3 movement;
 
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         equipedStaff = Staffs[0];
-        animator = GetComponent<Animator>();
-        rigidbody= GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ChangeStaff();
-        Attack();
-        Move();
+        if (!isDead()) { 
+            ChangeStaff();
+            Attack();
+            Move();
+        }
     }
 
     private void FixedUpdate()
@@ -88,15 +80,6 @@ public class MageController : MonoBehaviour
             Staffs[0].gameObject.SetActive(false);
             Staffs[1].gameObject.SetActive(false);
             Staffs[2].gameObject.SetActive(true);
-        }
-    }
-
-    public void TakeDamage(int damage) 
-    {
-        status.TakeDamage(damage);
-        if (status.isDead()) 
-        {
-            animator.SetBool("die", true);
         }
     }
 

@@ -11,6 +11,7 @@ public class Status
     [SerializeField]
     int MagicPoints;
 
+
     public void TakeDamage() 
     { 
         
@@ -28,7 +29,7 @@ public class Status
 
     public bool isDead() 
     { 
-        return HealthPoints > 0;
+        return HealthPoints <= 0;
     }
 
 }

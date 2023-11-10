@@ -20,6 +20,7 @@ public class MissleController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed * Time.deltaTime;
+        Destroy(gameObject, 5);
     }
 
     // Update is called once per frame
