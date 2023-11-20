@@ -23,6 +23,11 @@ public class MissleController : MonoBehaviour
         Destroy(gameObject, 5);
     }
 
+    public int GetDamage() 
+    { 
+        return damage;
+    }
+
     // Update is called once per frame
     void Update()
     {

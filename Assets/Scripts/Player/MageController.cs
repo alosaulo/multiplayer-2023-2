@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MageController : Character
 {
+    [Header("Player")]
+    [SerializeField] int nPlayer;
 
     public StaffBeahviour[] Staffs;
 
@@ -39,8 +41,8 @@ public class MageController : Character
 
     private void Move()
     {
-        float vAxis = Input.GetAxis("Vertical");
-        float hAxis = Input.GetAxis("Horizontal");
+        float vAxis = Input.GetAxis("VerticalP" + nPlayer);
+        float hAxis = Input.GetAxis("HorizontalP" + nPlayer);
 
         movement = new Vector3(hAxis, 0, vAxis).normalized * speed;
 
@@ -52,7 +54,7 @@ public class MageController : Character
 
     void Attack() 
     {
-        if (Input.GetButtonDown("Fire1")) 
+        if (Input.GetButtonDown("Fire1P" + nPlayer)) 
         { 
             animator.SetTrigger("atk");
         }

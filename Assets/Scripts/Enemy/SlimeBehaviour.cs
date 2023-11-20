@@ -41,6 +41,11 @@ public class SlimeBehaviour : Character
             isAtk= true;
             StartCoroutine("DoAttack");
         }
+
+        if (isDead()) 
+        { 
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator DoAttack() 
@@ -54,6 +59,24 @@ public class SlimeBehaviour : Character
         }
         yield return new WaitForSeconds(atkCooldown);
         isAtk = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "atk") 
+        {
+            MissleController missle = collision.gameObject.GetComponent<MissleController>();
+            TakeDamage(missle.GetDamage());
+            Destroy(missle.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "atk") 
+        { 
+            
+        }
     }
 
 }
